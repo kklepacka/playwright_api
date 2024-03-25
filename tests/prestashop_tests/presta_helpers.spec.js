@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { test } from '@playwright/test';
 import { sendRequest,buildCustomerXML,verifyRequiredKeys,extractUserIdFromResponse } from '../helpers/helpers'; // Adjust the path as necessary
 
 

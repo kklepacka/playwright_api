@@ -60,10 +60,9 @@ test.describe.serial('PrestaShop Create User', () => {
     console.log(`User ${customerJson.prestashop.customer.firstname} ${customerJson.prestashop.customer.lastname} with ID ${user_id} created successfully.`);
   });
 
-  const singleCustomerEndpoint = `/api/customers/${user_id}`;
 
   test('Get customer details', async ({ request }) => {
-
+    const singleCustomerEndpoint = `/api/customers/${user_id}`;
     console.log(singleCustomerEndpoint);
     
     const response = await request.get(singleCustomerEndpoint);
@@ -73,9 +72,12 @@ test.describe.serial('PrestaShop Create User', () => {
 
 
   test('Delete customer', async ({ request }) => {
-    
 
-    const deleteResponse = await request.delete(deleteCustomerEndpoint);
+    const singleCustomerEndpoint = `/api/customers/${user_id}`;
+    
+    console.log(singleCustomerEndpoint);
+
+    const deleteResponse = await request.delete(singleCustomerEndpoint);
     if (deleteResponse.status() == 200) {
       console.log(`User with ID ${user_id} deleted successfully.`);
     }
