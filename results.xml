@@ -1,0 +1,6 @@
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="6.937772999999999">
+<testsuite name="tests-examples\demo-todo-app.spec.js" timestamp="2024-04-09T15:24:28.204Z" hostname="" tests="1" failures="0" skipped="0" time="4.583" errors="0">
+<testcase name="Mark all as completed › should allow me to clear the complete state of all items" classname="tests-examples\demo-todo-app.spec.js" time="4.583">
+</testcase>
+</testsuite>
+</testsuites>
