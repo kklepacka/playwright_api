@@ -9,7 +9,7 @@ test.describe.serial('PrestaShop Create User', () => {
   let user_id;
 
 
-  test('Setup And Delete An Account', async ({ request }) => {
+  test('Setup An Account', async ({ request }) => {
     // Customer JSON structure
     const customerJson = {
       prestashop: {
@@ -63,11 +63,11 @@ test.describe.serial('PrestaShop Create User', () => {
 
   test('Get customer details', async ({ request }) => {
     const singleCustomerEndpoint = `/api/customers/${user_id}`;
-    console.log(singleCustomerEndpoint);
-    
     const response = await request.get(singleCustomerEndpoint);
+    expect(response.status()).toBe(200);
     const text = await response.text();
-    console.log(text);
+    expect (text).toContain(`${user_id}`);
+    expect (text).toContain(`<firstname><![CDATA[Marylin]]></firstname>`);
    } );
 
 
@@ -75,8 +75,6 @@ test.describe.serial('PrestaShop Create User', () => {
 
     const singleCustomerEndpoint = `/api/customers/${user_id}`;
     
-    console.log(singleCustomerEndpoint);
-
     const deleteResponse = await request.delete(singleCustomerEndpoint);
     if (deleteResponse.status() == 200) {
       console.log(`User with ID ${user_id} deleted successfully.`);
