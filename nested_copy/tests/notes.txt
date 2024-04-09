@@ -1,5 +1,0 @@
-used resources:
-
-fast-xml-parser 
-dotenv
-
