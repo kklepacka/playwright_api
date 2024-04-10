@@ -56,7 +56,7 @@ test.describe('New Todo', () => {
     await createDefaultTodos(page);
 
     // create a todo count locator
-    const todoCount = page.getByTestId('todo-count')
+    const todoCount = page.getByTestId('todo-countx')
   
     // Check test using different methods.
     await expect(page.getByText('3 items left')).toBeVisible();
